@@ -1,0 +1,17 @@
+{
+    "name": "0xl10n",
+    "description": "Translation Extension by Ethereum Localization Service",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.youtube.com/*"],
+        "js": ["contentscript.mjs"],
+        "runAt": "document_end"
+      }
+    ]
+  }
+  
