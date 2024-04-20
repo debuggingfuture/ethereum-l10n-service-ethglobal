@@ -11,6 +11,7 @@ node_modules/
 
 apps/contracts/lib/forge-std/*
 apps/chrome-extension/dist*/*
-packages/translation-attestation/dist/*
+packages/attestation/dist/*
 
 .idea/
+

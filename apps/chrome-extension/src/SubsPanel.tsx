@@ -3,26 +3,21 @@ import { Component, For, createMemo } from 'solid-js';
 import { usePlaybackReceivedContext } from './PlaybackReceivedContext';
 import { useSubsContext } from './SubsContext';
 import { isCurrentCue, Locale, CUE_BUFFER } from '@repo/subs';
+import { useTranslationContext } from './TranslationContext';
 
 export const SubsRows = ({
     cuesFrom = [],
     cuesTo = [],
-    currentPlaybackS,
     sendPlaybackControl
 }: {
     cuesFrom: VTTCue[];
     cuesTo: VTTCue[];
-    currentPlaybackS: () => number;
     sendPlaybackControl: any
 }) => {
 
-    // TODO more efficient to seek from cues instead of one observer each
-    const findActiveCue = createMemo(() => {
-        return _.find(
-            cuesFrom,
-            cue => isCurrentCue(cue, currentPlaybackS())
-        );
-    })
+
+    const { activeCue } = useTranslationContext();
+    console.log('activeCue', activeCue, activeCue(), activeCue.id)
 
     const onCueClick = (cue) => {
         sendPlaybackControl('seekTo', { playbackS: cue.startTime - CUE_BUFFER, isPause: true })
@@ -31,7 +26,7 @@ export const SubsRows = ({
     const activeClassName = 'bg-base-content';
     const defaultClassName = 'bg-base-200 text-neutral-content';
 
-    console.log('check', cuesFrom.length, cuesTo.length)
+
     return (
         <div>
             <For each={cuesFrom}>
@@ -39,7 +34,7 @@ export const SubsRows = ({
                     <tr
                         onClick={() => onCueClick(cue)}
                         class={
-                            (findActiveCue().startTime === cue.startTime ? activeClassName : defaultClassName) +
+                            (activeCue().id === cue.id ? activeClassName : defaultClassName) +
                             ' text-white rounded'
                         }
                     >
@@ -70,13 +65,12 @@ export const SubsPanel: Component = () => {
 
     return (
         <div class="bg-base-200 text-white">
-            <div class="overflow-x-auto overflow-y-scroll max-h-[90vh] h-full m-2">
+            <div class="overflow-x-auto overflow-y-scroll max-h-[75vh] h-full m-2">
                 <table class="table">
                     <tbody>
                         <SubsRows
                             cuesFrom={cuesByLocale[Locale.En] || []}
                             cuesTo={cuesByLocale[Locale.ZhTw] || []}
-                            currentPlaybackS={currentPlaybackS}
                             sendPlaybackControl={sendPlaybackControl}
                         />
                     </tbody>

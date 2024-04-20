@@ -1,12 +1,5 @@
 import _ from 'lodash';
-import {
-  fromEventPattern,
-
-  of,
-  pipe,
-  Observable,
-
-} from 'rxjs';
+import { fromEventPattern, of, pipe, Observable } from 'rxjs';
 
 import { WebVTT, VTTCue } from 'videojs-vtt.js';
 import {
@@ -131,6 +124,11 @@ export const parseForCues = (
 
   const allCues = cues.pipe(
     takeUntil(flushed),
+    map((cue: VTTCue, id: number) => {
+      cue.id = id.toString();
+      // cant use ...cue destructure for VTTCue
+      return cue;
+    }),
     // take in processor so client can decide, esp if post-processed
     shareReplay(),
   );
