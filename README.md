@@ -48,6 +48,10 @@ This repository contains packages of
 
 - package to upload transcript / translaion onto weblate
 
+## API
+
+- simple nestjs api to persist attestation
+
 
 ### contracts (Customized Allo strategy)
 
