@@ -34,16 +34,19 @@ This repository contains packages of
 - package to parse, translate and deliver subtitles 
 
 
+### Attestations
+- Create attestatiosn with 2 EAS Schemas
+1. attestation on each translation
+2. project attestation on contribution/allocation
+
+
 ### distributions
 
 - package to derive allocation base on contribution
 
-### Attestations
+## weblate
 
-- EAS Schemas
-2 schems
-1. attestation on each translation
-2. project attestation on contribution/allocation
+- package to upload transcript / translaion onto weblate
 
 
 
