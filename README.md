@@ -7,19 +7,23 @@ This repository contains packages of
 
 ### Subs
 
--
+- package to parse, translate and deliver subtitles 
 
-### EAS Schemas
+### distributions
+
+- package to derive allocation base on contribution
+
+### Attestations
+
+- EAS Schemas
 2 schems
 1. attestation on each translation
 2. project attestation on contribution/allocation
 
 
-
-
 ### contracts (Customized Allo strategy)
 
-- This contract implements Allov2 strategy
+- This contract implements Allov2 strategy ELSStrategy
 
 ### Grant Portal
 
