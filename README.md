@@ -1,3 +1,24 @@
+
+## Architecture Overview
+
+- Fund Distribution
+  - Allow protocol
+  - Custom Strategy (ELSStrategy)
+- Grant Portal
+  - Grant Stack
+- Chrome Extension
+  - SolidJS
+- Translation pipelines
+  - OpenAI Whisper
+  - OpenAI LLM prompt for translations
+  - Weblate (Translation Management Systems)
+- Attestations
+ - EAS (Ethereum Attestation Service)
+  - Witness
+- AI Pipelines
+  -  We run data pipeline to download video from youtube, use ASR OpenAI whisper to output original English transcript. Then prompt to OpenAI LLM for the final translatied (Traditional Chinese) file in vtt.
+
+
 This repository contains packages of
 
 ### Chrome extension
@@ -9,6 +30,7 @@ This repository contains packages of
 
 - package to parse, translate and deliver subtitles 
 
+
 ### distributions
 
 - package to derive allocation base on contribution
@@ -19,6 +41,8 @@ This repository contains packages of
 2 schems
 1. attestation on each translation
 2. project attestation on contribution/allocation
+
+
 
 
 ### contracts (Customized Allo strategy)
