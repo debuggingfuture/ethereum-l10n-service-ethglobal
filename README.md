@@ -2,8 +2,10 @@
 ## Architecture Overview
 
 - Fund Distribution
-  - Allow protocol
-  - Custom Strategy (ELSStrategy)
+  - Allo protocol
+    - we created Custom Strategy (ELSStrategy) which check against contribution EAS is attested and not expired before recipient can be registered
+  - Contribution/allocation
+    - we calculate score of each contribution via translation / attestation to derive final allocation and register to allo
 - Grant Portal
   - Grant Stack
 - Chrome Extension
