@@ -49,15 +49,13 @@ This repository contains packages of
 - package to upload transcript / translaion onto weblate
 
 
-
-
 ### contracts (Customized Allo strategy)
 
 - This contract implements Allov2 strategy ELSStrategy
 
 ### Grant Portal
 
-This is a fork of [gitcoinco/grants-stack](https://github.com/gitcoinco/grants-stack)
+- We have https://github.com/0xl10n/grants-stack which is a fork of [gitcoinco/grants-stack](https://github.com/gitcoinco/grants-stack)
 
 - Create & Manage Rounds to fundraise for l10n effort
 - End-user Explore available Rounds to donate
