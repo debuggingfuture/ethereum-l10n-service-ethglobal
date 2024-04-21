@@ -8,10 +8,11 @@
   - Grant Stack
 - Chrome Extension
   - SolidJS
+  - videojs-vtt to parse and render subtitles
 - Translation pipelines
   - OpenAI Whisper
   - OpenAI LLM prompt for translations
-  - Weblate (Translation Management Systems)
+  - Weblate (Translation Management Systems) to let user to modify subtitles
 - Attestations
  - EAS (Ethereum Attestation Service)
   - Witness
